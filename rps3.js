@@ -5,8 +5,13 @@ let losses = 0
 let ties = 0 
 
 while (true) { 
-const playerChoice = prompt("Enter Rock, Paper or Scissors: ")
-if (playerChoice !== "Rock" && playerChoice !== "Paper" && playerChoice !== "Scissors") { 
+const playerChoice = prompt("Enter Rock, Paper or Scissors (or q to quit): ") 
+if (playerChoice.toLowerCase() === "q") { 
+    break; 
+}
+if (playerChoice !== "Rock" && 
+    playerChoice !== "Paper" && 
+    playerChoice !== "Scissors") { 
     console.log("Please enter a valid choice.")
     continue; 
 }
@@ -32,3 +37,5 @@ if (computerChoice === playerChoice) {
     losses ++; 
 }
 }
+
+console.log("Wins:", wins, "Losses:", losses, "Ties:", ties); 
